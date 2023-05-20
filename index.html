@@ -3,28 +3,13 @@
     <title> Player Card</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-         @media only screen and (max-width: 600px) {
-      .container {
-        width: 100%;
-        max-width: 400px;
-      }
-      .card {
-        flex-direction: column;
-      }
-      .card-aside {
-        width: 100%;
-      }
-    }
-    
-    /* Add other media queries for different screen sizes if needed */
-    
-    .card {
+       .card {
       background: #1c1c4a;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
       color: #7a7ab8;
       display: flex;
     }
-    
+
     .card-aside {
       display: flex;
       flex-direction: column;
@@ -32,11 +17,11 @@
       padding: 10px 0;
       width: 80px;
     }
-    
+
     .card-overall {
       margin-bottom: 20px;
     }
-    
+
     .card-rating {
       color: #ff9900;
       display: block;
@@ -44,7 +29,7 @@
       font-weight: bold;
       line-height: 40px;
     }
-    
+
     .card-team > img {
       margin: 0 10px;
       margin-bottom: 10px;
@@ -52,18 +37,18 @@
       max-width: 80%;
       width: auto;
     }
-    
+
     .card-info {
       font-size: 40px;
       font-weight: bold;
       line-height: 40px;
       margin-top: auto;
     }
-    
+
     .card-main {
       flex: 1;
     }
-    
+
     .card-header {
       background-image: url("https://static.vecteezy.com/system/resources/previews/000/148/777/non_2x/vector-white-tiger-stripes.png");
       background-color: #0f0f3d;
@@ -73,11 +58,11 @@
       text-align: center;
       position: relative;
     }
-    
+
     .card-image {
       width: 80%;
     }
-    
+
     .card-name {
       color: #ff9900;
       border-top: 1px solid;
@@ -89,7 +74,7 @@
       margin: 0;
       text-align: center;
     }
-    
+
     .card-attribute {
       display: flex;
       flex-direction: row;
@@ -98,7 +83,7 @@
       line-height: 50px;
       text-align: center;
     }
-    
+
     .card-attributes {
       background: #0f0f3d;
       display: flex;
@@ -106,7 +91,7 @@
       flex-wrap: wrap;
       padding: 20px 0;
     }
-    
+
     .card-attribute__value {
       color: #FFFFFF;
       flex-basis: 40%;
@@ -126,11 +111,44 @@
 
     .container {
       margin: 50px auto;
-      width: 500px;
+      max-width: 500px;
     }
 
     img {
       width: 100%;
+    }
+
+    /* Media queries for responsive design */
+    @media screen and (max-width: 600px) {
+      .container {
+        margin: 20px auto;
+      }
+
+      .card {
+        flex-direction: column;
+      }
+
+      .card-aside {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .card-main {
+        margin-top: 20px;
+      }
+
+      .card-header {
+        background-size: cover;
+      }
+
+      .card-image {
+        width: 100%;
+      }
+
+      .card-attributes {
+        padding: 10px 0;
+      }
     }
     </style>
 </head>
