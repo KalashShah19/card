@@ -1,0 +1,162 @@
+<html>
+<head>
+    <title> Player Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         @media only screen and (max-width: 600px) {
+      .container {
+        width: 100%;
+        max-width: 400px;
+      }
+      .card {
+        flex-direction: column;
+      }
+      .card-aside {
+        width: 100%;
+      }
+    }
+    
+    /* Add other media queries for different screen sizes if needed */
+    
+    .card {
+      background: #1c1c4a;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      color: #7a7ab8;
+      display: flex;
+    }
+    
+    .card-aside {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 10px 0;
+      width: 80px;
+    }
+    
+    .card-overall {
+      margin-bottom: 20px;
+    }
+    
+    .card-rating {
+      color: #ff9900;
+      display: block;
+      font-size: 40px;
+      font-weight: bold;
+      line-height: 40px;
+    }
+    
+    .card-team > img {
+      margin: 0 10px;
+      margin-bottom: 10px;
+      max-height: 50px;
+      max-width: 80%;
+      width: auto;
+    }
+    
+    .card-info {
+      font-size: 40px;
+      font-weight: bold;
+      line-height: 40px;
+      margin-top: auto;
+    }
+    
+    .card-main {
+      flex: 1;
+    }
+    
+    .card-header {
+      background-image: url("https://static.vecteezy.com/system/resources/previews/000/148/777/non_2x/vector-white-tiger-stripes.png");
+      background-color: #0f0f3d;
+      background-blend-mode: screen;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    
+    .card-image {
+      width: 80%;
+    }
+    
+    .card-name {
+      color: #ff9900;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      font-size: 35px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      line-height: 50px;
+      margin: 0;
+      text-align: center;
+    }
+    
+    .card-attribute {
+      display: flex;
+      flex-direction: row;
+      flex-basis: 50%;
+      font-size: 30px;
+      line-height: 50px;
+      text-align: center;
+    }
+    
+    .card-attributes {
+      background: #0f0f3d;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 20px 0;
+    }
+    
+    .card-attribute__value {
+      color: #FFFFFF;
+      flex-basis: 40%;
+      font-size: 35px;
+      font-weight: bold;
+      margin-right: 6px;
+      text-align: right;
+    }
+
+    body {
+      background: #EEE;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+
+    .container {
+      margin: 50px auto;
+      width: 500px;
+    }
+
+    img {
+      width: 100%;
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <div class="card-aside">
+      <div class="card-overall"><span class="card-rating">94</span><span class="card-position">FW</span></div>
+      <div class="card-team"><img class="card-club" src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/150px-Real_Madrid_CF.svg.png"/><img class="card-national" src="https://flags.fmcdn.net/data/flags/w580/pt.png"/></div>
+      <div class="card-info"><span>7</span></div>
+    </div>
+    <div class="card-main">
+      <div class="card-header">
+        <div class="card-header-bg"></div><img class="card-image" src="https://media.contentapi.ea.com/content/dam/ea/easports/fifa/features/2017/cristiano-ronaldo/june5/fifa18-ronaldopage-ronaldo-fg-xs.png" alt=""/>
+      </div>
+      <h1 class="card-name">RONALDO</h1>
+      <div class="card-attributes">
+        <div class="card-attribute"><span class="card-attribute__value">92</span><span class="card-attribute__name">PAC</span></div>
+        <div class="card-attribute"><span class="card-attribute__value">90</span><span class="card-attribute__name">DRI</span></div>
+        <div class="card-attribute"><span class="card-attribute__value">86</span><span class="card-attribute__name">SHO</span></div>
+        <div class="card-attribute"><span class="card-attribute__value">43</span><span class="card-attribute__name">DEF</span></div>
+        <div class="card-attribute"><span class="card-attribute__value">86</span><span class="card-attribute__name">PAS</span></div>
+        <div class="card-attribute"><span class="card-attribute__value">80</span><span class="card-attribute__name">PHY</span></div>
+      </div>
+    </div>
+  </div>
+</div>  
+ </body>   
+</html>
