@@ -1,120 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Draggable Circles</title>
   <style>
-   body {
-  margin: 0;
-  padding: 0;
-}
+    body {
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Football_field.svg/682px-Football_field.svg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
 
-.grass-background {
-  background: url('https://images.app.goo.gl/HkkRZzaTUQMnnqZg9') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .circle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: red;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      cursor: move;
+      position: absolute;
+    }
 
-.container {
-  text-align: center;
-  color: white;
-}
+    .circle-text {
+      margin-top: 10px;
+    }
 
-h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.circles-container {
-  display: flex;
-  justify-content: center;
-}
-
-.circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.8);
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: move;
-}
-
-.circle-number {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.circle-text {
-  font-size: 14px;
-}
-
-@media (max-width: 768px) {
-  .circle {
-    width: 60px;
-    height: 60px;
-  }
-
-  .circle-number {
-    font-size: 18px;
-  }
-
-  .circle-text {
-    font-size: 12px;
-  }
-}
-
+    @media (max-width: 768px) {
+      .circle {
+        width: 80px;
+        height: 80px;
+        font-size: 18px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="grass-background">
-    <div class="container">
-      <h1>Draggable Circles</h1>
-      <div class="circles-container">
-        <div class="circle" draggable="true">
-          <div class="circle-number">1</div>
-          <div class="circle-text">Goal Keeper </div>
-        </div>
-        <!-- Repeat the above circle code for the other 10 circles -->
-        <!-- Circle 2 -->
-        <div class="circle" draggable="true">
-          <div class="circle-number">2</div>
-          <div class="circle-text">Defender </div>
-        </div>
-        <!-- Circle 3 -->
-        <div class="circle" draggable="true">
-          <div class="circle-number">3</div>
-          <div class="circle-text">Mid Fielder</div>
-        </div>
-        <!-- Repeat the above circle code for the other 8 circles -->
-      </div>
-    </div>
+  <div class="circle" id="circle1">
+    <span class="circle-number">7</span>
+    <span class="circle-text">Player 1</span>
   </div>
+
+  <div class="circle" id="circle2">
+    <span class="circle-number">10</span>
+    <span class="circle-text">Player 2</span>
+  </div>
+
   <script>
-  document.addEventListener("DOMContentLoaded", function() {
-  const circles = document.querySelectorAll(".circle");
+    var circles = document.querySelectorAll('.circle');
+    var isDragging = false;
+    var activeCircle = null;
+    var prevX, prevY;
 
-  circles.forEach(circle => {
-    circle.addEventListener("dragstart", dragStart);
-    circle.addEventListener("dragend", dragEnd);
-  });
+    circles.forEach(function(circle) {
+      circle.addEventListener("mousedown", function(event) {
+        isDragging = true;
+        activeCircle = circle;
+        prevX = event.clientX;
+        prevY = event.clientY;
+      });
+    });
 
-  function dragStart() {
-    this.classList.add("dragging");
-  }
+    document.addEventListener("mousemove", function(event) {
+      if (isDragging && activeCircle) {
+        var newX = activeCircle.offsetLeft + (event.clientX - prevX);
+        var newY = activeCircle.offsetTop + (event.clientY - prevY);
+        activeCircle.style.left = newX + "px";
+        activeCircle.style.top = newY + "px";
+        prevX = event.clientX;
+        prevY = event.clientY;
+      }
+    });
 
-  function dragEnd() {
-    this.classList.remove("dragging");
-  }
-});
-    
+    document.addEventListener("mouseup", function() {
+      isDragging = false;
+      activeCircle = null;
+    });
   </script>
 </body>
 </html>
